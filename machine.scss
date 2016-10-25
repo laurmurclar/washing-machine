@@ -1,0 +1,133 @@
+$bg: #ccffff;
+$machine-color: #ffcccc;
+$control-panel-color: #ccffcc;
+
+$ctrl-pnl-width: 80px;
+$ctrl-pnl-height: 35px;
+
+body {
+  background-color: $bg;
+}
+
+.machine {
+  position: absolute;
+	bottom: 50px;
+	left: calc(50% - 165px);
+  background-color: $machine-color;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.control-panel {
+  background-color: $control-panel-color;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 10px;
+  width: $ctrl-pnl-width;
+  height: $ctrl-pnl-height;
+  border-radius: 5px;
+}
+
+$knob-diameter: 25px;
+$knob-color: #ff9966;
+.knob {
+  position: absolute;
+  background-color: $knob-color;
+  width: $knob-diameter;
+  height: $knob-diameter;
+  border-radius: 100%;
+  margin: ($ctrl-pnl-height - $knob-diameter)/2;
+}
+
+$door-color: #ff9999;
+$door-diameter: 170px;
+.door {
+  position: absolute;
+  background-color: $door-color;
+  width: $door-diameter;
+  height: $door-diameter;
+  border-radius: 100%;
+  left: calc(50% - #{$door-diameter/2});
+  bottom: 10%;
+}
+
+$glass-color: #e6ffff;
+$glass-diameter: 2 * $door-diameter/3;
+.glass {
+  position: absolute;
+  background-color: $glass-color;
+  width: $glass-diameter;
+  height: $glass-diameter;
+  border-radius: 100%;
+  left: calc(50% - #{$glass-diameter/2});
+  top: calc(50% - #{$glass-diameter/2});
+}
+
+$handle-width: 50px;
+$handle-height: 40px;
+$handle-color: #ccccff;
+.handle {
+  position: absolute;
+  right: -5px;
+  top: calc(50% - 30px);
+  width: $handle-width;
+  height: $handle-height;
+  border-radius: 5px;
+  background-color: $handle-color;
+  transform: rotate(-7deg);
+}
+
+.logo {
+  margin: 7px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 7px 7px 0 0 #ffcccc;
+}
+
+$basket-width: 150px;
+$basket-height: 70px;
+$basket-color: #ccccff;
+
+$clothes-height: 20px;
+.basket {
+  position: fixed;
+  width: $basket-width;
+  height: $basket-height;
+  background-color: $basket-color;
+  border-radius: 0px 0px 30px 30px;
+  bottom: 50px;
+  left: 70px;
+
+  .clothes {
+    position: absolute;
+    width: $basket-width;
+    height: $clothes-height;
+    background-color: #99ffcc;
+    top: 0px - $clothes-height;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .clothes::after {
+    position: absolute;
+    width: $basket-width;
+    height: $clothes-height;
+    background-color: #99ffcc;
+    top: 0px - $clothes-height - 50px;
+    border-radius: 30px 30px 0 0;
+  }
+}
+
+$rim-width: 170px;
+$rim-height: 10px;
+$rim-color: #ccccff;
+.rim {
+  position: absolute;
+  width: $rim-width;
+  height: $rim-height;
+  background-color: $rim-color;
+  border-radius: 0px 0px 30px 30px;
+  left: calc(50% - #{$rim-width}/2);
+}
