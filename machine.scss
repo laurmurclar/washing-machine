@@ -1,25 +1,24 @@
 $bg: #ccffff;
-$machine-color: #ffcccc;
-$control-panel-color: #ccffcc;
-
-$ctrl-pnl-width: 80px;
-$ctrl-pnl-height: 35px;
-
 body {
   background-color: $bg;
 }
 
-.machine {
+$machine-height: 250px;
+$machine-color: #ffcccc;
+#machine {
   position: absolute;
 	bottom: 50px;
 	left: calc(50% - 165px);
   background-color: $machine-color;
-  width: 250px;
-  height: 250px;
+  width: $machine-height;
+  height: $machine-height;
   border-radius: 10px;
 }
 
-.control-panel {
+$ctrl-pnl-width: 80px;
+$ctrl-pnl-height: 35px;
+$control-panel-color: #ccffcc;
+#control-panel {
   background-color: $control-panel-color;
   position: absolute;
   top: 0px;
@@ -32,7 +31,7 @@ body {
 
 $knob-diameter: 25px;
 $knob-color: #ff9966;
-.knob {
+#knob {
   position: absolute;
   background-color: $knob-color;
   width: $knob-diameter;
@@ -41,9 +40,9 @@ $knob-color: #ff9966;
   margin: ($ctrl-pnl-height - $knob-diameter)/2;
 }
 
-$door-color: #ff9999;
 $door-diameter: 170px;
-.door {
+$door-color: #ff9999;
+#door {
   position: absolute;
   background-color: $door-color;
   width: $door-diameter;
@@ -53,9 +52,9 @@ $door-diameter: 170px;
   bottom: 10%;
 }
 
-$glass-color: #e6ffff;
 $glass-diameter: 2 * $door-diameter/3;
-.glass {
+$glass-color: #e6ffff;
+#glass {
   position: absolute;
   background-color: $glass-color;
   width: $glass-diameter;
@@ -68,7 +67,7 @@ $glass-diameter: 2 * $door-diameter/3;
 $handle-width: 50px;
 $handle-height: 40px;
 $handle-color: #ccccff;
-.handle {
+#handle {
   position: absolute;
   right: -5px;
   top: calc(50% - 30px);
@@ -79,7 +78,7 @@ $handle-color: #ccccff;
   transform: rotate(-7deg);
 }
 
-.logo {
+#logo {
   margin: 7px;
   width: 30px;
   height: 30px;
@@ -92,7 +91,7 @@ $basket-height: 70px;
 $basket-color: #ccccff;
 
 $clothes-height: 20px;
-.basket {
+#basket {
   position: fixed;
   width: $basket-width;
   height: $basket-height;
@@ -101,7 +100,7 @@ $clothes-height: 20px;
   bottom: 50px;
   left: 70px;
 
-  .clothes {
+  #clothes {
     position: absolute;
     width: $basket-width;
     height: $clothes-height;
@@ -110,7 +109,7 @@ $clothes-height: 20px;
     border-radius: 30px 30px 0 0;
   }
 
-  .clothes::after {
+  #clothes::after {
     position: absolute;
     width: $basket-width;
     height: $clothes-height;
@@ -123,11 +122,21 @@ $clothes-height: 20px;
 $rim-width: 170px;
 $rim-height: 10px;
 $rim-color: #ccccff;
-.rim {
+#rim {
   position: absolute;
   width: $rim-width;
   height: $rim-height;
   background-color: $rim-color;
   border-radius: 0px 0px 30px 30px;
   left: calc(50% - #{$rim-width}/2);
+}
+
+$title-color: #ccccff;
+#title {
+  position: fixed;
+  font-family: 'Bubblegum Sans', cursive;
+  color: white;
+  -webkit-text-stroke: 1px $title-color;
+  bottom: $machine-height + 50px;
+  left: 50%;
 }

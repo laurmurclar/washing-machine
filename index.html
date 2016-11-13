@@ -1,23 +1,39 @@
 <html>
   <head>
     <link rel='stylesheet' type='text/css' href='machine.css'>
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
   </head>
+
   <body>
-    <div class='machine'>
-      <div class='control-panel'>
-        <div class='knob'></div>
+
+    <h1 id='title'><h1>
+
+    <div id='machine'>
+      <div id='control-panel'>
+        <div id='knob'></div>
       </div>
-      <div class='door'>
-        <div class='handle'>
+      <div id='door'>
+        <div id='handle'>
         </div>
-        <div class='glass'>
+        <div id='glass'>
         </div>
       </div>
     </div>
-    <div class='basket'>
-      <div class='rim'></div>
-      <div class='logo'></div>
-      <div class='clothes'></div>
+
+    <div id='basket'>
+      <div id='rim'></div>
+      <div id='logo'></div>
+      <div id='clothes'></div>
     </div>
+
+    <script>
+      document.getElementById("knob").addEventListener("click", onKnobClick);
+
+      function onKnobClick() {
+        var title = document.getElementById("title");
+        title.innerHTML = (title.innerHTML === "" ? "Whirrrrr" : "");
+      }
+    </script>
+
   </body>
 </html>
